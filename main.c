@@ -1,10 +1,10 @@
 #include <stdio.h>
 
-int dec_to_binary(int num) {
-    int res = 0, d = 1;
+unsigned long int dec_to_binary(int num) {
+    unsigned long int res = 0, d = 1;
     while (num) {
         res += (num % 2) * d;
-        num = num / 2;
+        num /= 2;
         d = d * 10;
     }
     return res;
@@ -31,6 +31,6 @@ char *to_ascii(int num, char word[5]) {
 
 int main() {
     char word[5] = "00000";
-    printf("%s", to_ascii(12345, word));
+    printf("%lu", dec_to_binary(12345));
     return 0;
 }
